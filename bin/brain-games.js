@@ -1,3 +1,5 @@
 #!/usr/bin/env node
-console.log('Welcome to the Brain Games!')
-console.log('Hello, `${name}!`')
+
+import greetUser from '../src/cli.js';
+
+greetUser();
