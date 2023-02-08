@@ -1,6 +1,6 @@
 import consistentTypeSpecifierStyle from 'eslint-plugin-import/lib/rules/consistent-type-specifier-style.js';
 import getRandomNumber from './randomNumber.js';
-import outputText from './output.js';
+import outputText from './index.js';
 
 const introductoryText = 'Answer "yes" if the number is even, otherwise answer "no".';
 
