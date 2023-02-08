@@ -8,14 +8,14 @@ const maxRange = 100;
 const minIndexNumber = 0;
 const maxIndexNumber = 2;
 
-function calculate (a, b, operator) {
-    if(operator === '+') {
+function calculate (a, b, operators) {
+    if(operators === '+') {
         return a + b;
     }
-    if(operator === '-') {
+    if(operators === '-') {
         return a - b;
     }
-    if(operator === '*') {
+    if(operators === '*') {
         return a * b;
     }
 }
@@ -29,7 +29,7 @@ function randomSings () {
     const number2 = getRandomNumber(minRange, maxRange);
     const operator = operators[randomIndex(operators)];
     const question = `${number1} ${operator} ${number2}`;
-    const corectAnswer = calculate(number1, number2, operator);
+    const corectAnswer = calculate(number1, number2, operator).toString();
 
     return[question, corectAnswer]
 }
