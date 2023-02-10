@@ -6,18 +6,17 @@ const introductoryText = 'Find the greatest common divisor of given numbers.'
 const minRange = 1;
 const maxRange = 100;
 
-const number1 = getRandomNumber(minRange, maxRange);
-const number2 = getRandomNumber(minRange, maxRange);
-
-function searchNod (number1, number2) {
-    if (y > x) return NOD(y, x);
+function searchNod (x, y) {
+    if (y > x) return searchNod(y, x);
 	if (!y) return x;
-	return NOD(y, x % y);
+	return searchNod(y, x % y);
 };
 
 function corectConclusion () {
+    const number1 = getRandomNumber(minRange, maxRange);
+    const number2 = getRandomNumber(minRange, maxRange);
     const question = `${number1} ${number2}`;
-    const corectAnswer = searchNod();
+    const corectAnswer = searchNod(number1, number2).toString();
 
     return [question, corectAnswer]
 }
