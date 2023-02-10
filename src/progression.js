@@ -3,31 +3,34 @@ import outputText from './index.js';
 import { question } from 'readline-sync';
 
 const introductoryText = 'What number is missing in the progression?';
-const minRange = 1;
-const maxRange = 100;
+const minStart = 2;
+const maxStart = 10;
 const minIndex = 0;
 const maxIndex = 9;
+const minStep = 2;
+const maxStep = 5;
 const points = '..';
 
 function randomIndex () {
     return getRandomNumber(minIndex, maxIndex);
 }
 
-function outputNumber () {
+function outputNumber (startProgression, step) {
     const lineNumbers = [];
-    for(let i = 0; i < 10; i++) {
-        const number = getRandomNumber(minRange, maxRange);
-        lineNumbers.push(number);
+    for(let i = 1; i < 9; i++) {
+        lineNumbers.push(startProgression * step * i)
     }
     return lineNumbers;
 }
 
 function arithmeticProgression (){
-    const progression = outputNumber();
-    const hidenElement = randomIndex(...progression);
+    const startProgression = getRandomNumber(minStart, maxStart);
+    const step = getRandomNumber(minStep, maxStep);
+    const progression = outputNumber(startProgression, step);
+    const hidenElement = randomIndex(progression);
     const corectAnswer = progression[hidenElement].toString();
     progression[hidenElement] = points;
-    const question = hidenElement;
+    const question = progression.join(' ');
 
     return[question, corectAnswer]
 }
