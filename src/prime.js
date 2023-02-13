@@ -6,16 +6,19 @@ const minRange = 1;
 const maxRange = 100;
 
 
-function primeNumber(number) {
-    for (let i = 2; i <= 100; i++){
-        for(let j = 0; j <= i; j++){
-            if(j % i === 0){
-                return false;
-            }
-        }
-        return true;
+function primeNumber (number) {
+    const checkLimit = Math.sqrt(number);
+    if (number < 2) {
+      return false;
     }
-}
+    for (let i = 2; i <= checkLimit; i += 1) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+  
+    return true;
+};
 
 function outputPrime () {
     const number = getRandomNumber(minRange, maxRange);
@@ -26,5 +29,5 @@ function outputPrime () {
 }
 
 export default function startPrime() {
-    outputText(introductoryText, startPrime);
+    outputText(introductoryText, outputPrime);
 }
