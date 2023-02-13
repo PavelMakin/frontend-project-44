@@ -7,10 +7,9 @@ const introductoryText = 'Answer "yes" if the number is even, otherwise answer "
 const minRange = 1;
 const maxRange = 100;
 
-function parity (number) { number % 2 === 0 };
-
 function outputGenerator() { 
     const number = getRandomNumber(minRange, maxRange);
+    const parity = (number) => (number % 2 === 0);
     const corectAnswer = parity(number) ? 'yes' : 'no';
     const question = (number).toString();
 
