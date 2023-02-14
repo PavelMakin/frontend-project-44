@@ -20,6 +20,6 @@ export default function outputText (introductoryText, outputGenerator) {
         }
         console.log('Correct!')
     }
-    console.log(`Congratulations, ${userName}`)
+    console.log(`Congratulations, ${userName}!`)
 };
 
