@@ -6,7 +6,7 @@ const introductoryText = 'What number is missing in the progression?';
 const minStart = 2;
 const maxStart = 10;
 const minIndex = 0;
-const maxIndex = 9;
+const maxIndex = 8;
 const minStep = 2;
 const maxStep = 5;
 const points = '..';
@@ -17,7 +17,7 @@ function randomIndex () {
 
 function outputNumber (startProgression, step) {
     const lineNumbers = [];
-    for(let i = 1; i < 9; i++) {
+    for(let i = 1; i < 10; i++) {
         lineNumbers.push(startProgression * step * i)
     }
     return lineNumbers;
