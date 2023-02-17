@@ -8,32 +8,33 @@ const maxRange = 100;
 const minIndexNumber = 0;
 const maxIndexNumber = 2;
 
-function calculate (a, b, operators) {
-    if(operators === '+') {
-        return a + b;
-    }
-    if(operators === '-') {
-        return a - b;
-    }
-    if(operators === '*') {
-        return a * b;
-    }
+function calculate(a, b) {
+  if (operators === '+') {
+    return a + b;
+  }
+  if (operators === '-') {
+    return a - b;
+  }
+  if (operators === '*') {
+    return a * b;
+  }
+  return a + b;
 }
 
-function randomIndex () {
-    return getRandomNumber(minIndexNumber, maxIndexNumber);
+function randomIndex() {
+  return getRandomNumber(minIndexNumber, maxIndexNumber);
 }
 
-function randomSings () {
-    const number1 = getRandomNumber(minRange, maxRange);
-    const number2 = getRandomNumber(minRange, maxRange);
-    const operator = operators[randomIndex(operators)];
-    const question = `${number1} ${operator} ${number2}`;
-    const corectAnswer = calculate(number1, number2, operator).toString();
+function randomSings() {
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
+  const operator = operators[randomIndex(operators)];
+  const question = `${number1} ${operator} ${number2}`;
+  const corectAnswer = calculate(number1, number2, operator).toString();
 
-    return[question, corectAnswer]
+  return [question, corectAnswer];
 }
 
-export default function startCalc () {
-    outputText(introductoryText, randomSings);
-} 
+export default function startCalc() {
+  outputText(introductoryText, randomSings);
+}
