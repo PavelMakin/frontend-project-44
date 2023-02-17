@@ -28,7 +28,7 @@ function arithmeticProgression (){
     const step = getRandomNumber(minStep, maxStep);
     const progression = outputNumber(startProgression, step);
     const hidenElement = randomIndex(progression);
-    const corectAnswer = `${progression[hidenElement]}`;
+    const corectAnswer = String(progression[hidenElement]);
     progression[hidenElement] = points;
     const question = progression.join(' ');
 
