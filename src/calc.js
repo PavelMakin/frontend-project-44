@@ -8,14 +8,14 @@ const maxRange = 100;
 const minIndexNumber = 0;
 const maxIndexNumber = 2;
 
-function calculate(a, b) {
-  if (operators === '+') {
+function calculate(a, b, operator) {
+  if (operator === '+') {
     return a + b;
   }
-  if (operators === '-') {
+  if (operator === '-') {
     return a - b;
   }
-  if (operators === '*') {
+  if (operator === '*') {
     return a * b;
   }
   return a + b;
